@@ -1,5 +1,5 @@
 {% set name = "qpbenchmark" %}
-{% set version = "2.2.3" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qpbenchmark-{{ version }}.tar.gz
-  sha256: f1ddc62621f35e127d3306907678d633877b913a8852f91738bee8b1c7797d8f
+  sha256: f41979f1c2def27eb119867d3b9ca8887d03599fa65ebb63d3cf513d48072108
 
 build:
   entry_points:
