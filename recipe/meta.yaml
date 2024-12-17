@@ -18,14 +18,14 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - flit-core >=2,<4
     - pandas >=1.4.3
     - pip
     - py-cpuinfo >=9.0.0
     - qpsolvers >=4.2.0
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - matplotlib-base >=3.6.2
     - pandas >=1.4.3
     - py-cpuinfo >=9.0.0
@@ -40,6 +40,7 @@ test:
     - pip check
     - qpbenchmark --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
