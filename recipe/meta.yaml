@@ -1,13 +1,13 @@
 {% set name = "qpbenchmark" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qpbenchmark-{{ version }}.tar.gz
-  sha256: f41979f1c2def27eb119867d3b9ca8887d03599fa65ebb63d3cf513d48072108
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qpbenchmark-{{ version }}.tar.gz
+  sha256: 699b1b9018e37fb12aa2a51de87e6c60d2a3b5c40a453163752dba3c5575bd8d
 
 build:
   entry_points:
@@ -18,19 +18,22 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - flit-core >=2,<4
     - pandas >=1.4.3
     - pip
     - py-cpuinfo >=9.0.0
     - qpsolvers >=4.2.0
+    - tqdm >=4.67.1
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - matplotlib-base >=3.6.2
     - pandas >=1.4.3
     - py-cpuinfo >=9.0.0
+    - pyarrow >=15.0.0
     - qpsolvers >=4.2.0
     - tabulate >=0.9.0
+    - tqdm >=4.67.1
 
 test:
   imports:
@@ -39,6 +42,7 @@ test:
     - pip check
     - qpbenchmark --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
