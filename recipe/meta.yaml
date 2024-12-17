@@ -24,6 +24,7 @@ requirements:
     - pip
     - py-cpuinfo >=9.0.0
     - qpsolvers >=4.2.0
+    - tqdm >=4.67.1
   run:
     - python >={{ python_min }}
     - matplotlib-base >=3.6.2
